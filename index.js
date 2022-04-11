@@ -46,16 +46,17 @@ var cta_anim = bodymovin.loadAnimation({
 
 logo_intro.onComplete = function() {
   // console.log('logo_intro complete')
+  document.getElementById("logo_intro").style.opacity = '0';
 }
 
 logo_intro.onEnterFrame = function () {
-  if(logo_intro.currentFrame >= 71){
+  if(logo_intro.currentFrame >= 65){
     text_anim.play(); 
-    document.getElementById("logo_intro").style.opacity = '0';
   }
 }
 text_anim.onEnterFrame = function () {
   if(text_anim.currentFrame >= 40){
+    document.getElementById("logo_intro").style.opacity = '0';
     small_logo_anim.play();
   }
 }
